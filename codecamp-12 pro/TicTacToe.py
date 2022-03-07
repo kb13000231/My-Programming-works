@@ -14,7 +14,8 @@ class TicTacToe:
     @staticmethod
     def print_board_nums():
         # 0 | 1 | 2 etc {tells us what number corresponds to what box}
-        number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
+        number_board = [
+            [str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
         for row in number_board:
             print('| ' + '| '.join(row) + ' |')
 
@@ -100,7 +101,10 @@ def play(game, x_player, o_player, print_game=True):
 
 
 if __name__ == '__main__':
-    x = int(input("Which type of opponent do you want? \n1- novice AI \n2- advanced AI \n3- PvP \n "))
+    x = int(input(
+        '''Which type of opponent do you want?
+1- novice AI \n2- advanced AI \n3- PvP \n'''
+        ))
     if x == 1:
         b = True
         while b is True:
