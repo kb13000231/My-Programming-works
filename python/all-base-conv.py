@@ -40,7 +40,7 @@ while True:
         try:
             int(inp_base)
             break
-        except:
+        except Exception:
             print('Invalid Input. Please enter an input in 2 to 36 range: ', end='')
 
     if inpcheck(inp_no, inp_base) == 0:
@@ -53,7 +53,7 @@ while True:
         try:
             int(out_base)
             break
-        except:
+        except Exception:
             print('Invalid Input. Please enter an input in 2 to 36 range: ', end='')
 
     print(converter(inp_no, int(inp_base), int(out_base)))

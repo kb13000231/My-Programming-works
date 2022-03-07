@@ -1,9 +1,9 @@
-print("This is a binary converter\n Enter done when you're done")
+print("This is a binary converter\nEnter done when you're done")
 while True:
     inp_no = input('Please Enter your number: ')
     try:
         int(inp_no)
-    except:
+    except Exception:
         if inp_no == 'done':
             break
         else:
