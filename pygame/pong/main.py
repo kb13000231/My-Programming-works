@@ -66,12 +66,6 @@ class Ball:
         self.y_vel = 0
         self.x_vel *= -1
 
-    # def freset(self):
-    #     self.x = self.origin_x
-    #     self.y = self.origin_y
-    #     self.y_vel = 0
-    #     self.x_vel = 0
-
 
 def draw(win, paddles, ball, lscore, rscore):
     win.fill(BLACK)

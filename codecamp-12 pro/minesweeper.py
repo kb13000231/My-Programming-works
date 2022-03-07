@@ -13,7 +13,9 @@ class Board:
         self.dug = set()
 
     def make_new_board(self):
-        board = [[None for _ in range(self.dim_size)] for _ in range(self.dim_size)]
+        board = [
+            [None for _ in range(self.dim_size)] for _ in range(self.dim_size)
+            ]
 
         bombs_planted = 0
 
@@ -63,7 +65,9 @@ class Board:
         return True
 
     def __str__(self):
-        visible_board = [[None for _ in range(self.dim_size)] for _ in range(self.dim_size)]
+        visible_board = [
+            [None for _ in range(self.dim_size)] for _ in range(self.dim_size)
+            ]
 
         for row in range(self.dim_size):
             for col in range(self.dim_size):
@@ -104,7 +108,8 @@ class Board:
             string_rep += ' |\n'
 
         str_len = int(len(string_rep) / self.dim_size)
-        string_rep = indices_row + '-'*str_len + '\n' + string_rep + '-'*str_len
+        string_rep = indices_row + '-'*str_len + '\n' + string_rep
+        string_rep += '-'*str_len
 
         return string_rep
 
@@ -114,7 +119,9 @@ def play(dim_size=10, num_bombs=10):
     safe = True
     while len(board.dug) < board.dim_size ** 2 - num_bombs:
         print(board)
-        user_input = re.split(',(\\s)*', input("Where would you like to dig, Input as row, column: "))
+        user_input = re.split(',(\\s)*', input(
+            "Where would you like to dig, Input as row, column: "
+            ))
         row, col = int(user_input[0]), int(user_input[-1])
         if row < 0 or row >= dim_size or col < 0 or col >= dim_size:
             print("Invalid location. Try again!")
@@ -127,7 +134,8 @@ def play(dim_size=10, num_bombs=10):
         print("Congratulations!!! You Won")
     else:
         print("Sorry, Game over:(")
-        board.dug = [(r, c) for r in range(board.dim_size) for c in range(board.dim_size)]
+        size = board.dim_size
+        board.dug = [(r, c) for r in range(size) for c in range(size)]
         print(board)
 
 
