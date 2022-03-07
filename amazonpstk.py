@@ -28,7 +28,7 @@ def send_email(URL):
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login('kb13000231@gmail.com', 'fxkhjwjaxcgnexvx')
+    server.login('Your e-mail here', 'Your oauth code here')
 
     subject = 'Price fell down'
     body = f'check the amazon link: {URL}'
