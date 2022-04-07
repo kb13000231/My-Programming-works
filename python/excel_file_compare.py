@@ -8,7 +8,10 @@ flist = []
 
 
 def addexcelfile():
-    filename = filedialog.askopenfilename(initialdir="/", title='Select File', filetypes=(("Excel files", "*.xls *.xlsx"), ("All files", "*.*")))
+    filename = filedialog.askopenfilename(initialdir="/", title='Select File',
+                                          filetypes=(
+                                              ("Excel files", "*.xls *.xlsx"),
+                                              ("All files", "*.*")))
     # print(filename)
     flist.append(filename)
     label = tk.Label(frame, text=filename, bg="gray")
@@ -34,8 +37,13 @@ def conv(fname):
     return ofname
 
 
-def save():
-    filename = filedialog.asksaveasfilename(initialdir="/", title='Save File as', filetypes=(("Excel files", "*.xls *.xlsx"), ("All files", "*.*")))
+# def save():
+#     filename = filedialog.asksaveasfilename(initialdir="/",
+#                                             title='Save File as',
+#                                             filetypes=(
+#                                                       ("Excel files",
+#                                                        "*.xls *.xlsx"),
+#                                                       ("All files", "*.*")))
 
 
 root = tk.Tk()
@@ -46,10 +54,12 @@ canvas.pack()
 frame = tk.Frame(root, bg='white')
 frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)
 
-openfile1 = tk.Button(root, text="Select First File", padx=10, pady=5, fg="black", bg="#FFEE75", command=addexcelfile)
+openfile1 = tk.Button(root, text="Select First File", padx=10, pady=5,
+                      fg="black", bg="#FFEE75", command=addexcelfile)
 openfile1.pack()
 
-openfile2 = tk.Button(root, text="Select Second File", padx=10, pady=5, fg="black", bg="#FFEE75", command=addexcelfile)
+openfile2 = tk.Button(root, text="Select Second File", padx=10, pady=5,
+                      fg="black", bg="#FFEE75", command=addexcelfile)
 openfile2.pack()
 
 root.mainloop()

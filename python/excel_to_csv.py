@@ -1,5 +1,5 @@
-import pandas as pd
 import openpyxl as op
+
 
 def conv(fname):
     a = fname.split('.')
@@ -9,16 +9,16 @@ def conv(fname):
     data = sheet.rows
     ofile = open(ofname, 'w+')
     for row in data:
-        l = list(row)
-        for i in range(len(l)):
-            if i == len(l) - 1:
-                ofile.write(str(l[i].value))
+        ls = list(row)
+        for i in range(len(ls)):
+            if i == len(ls) - 1:
+                ofile.write(str(ls[i].value))
             else:
-                ofile.write(str(l[i].value) + ',')
+                ofile.write(str(ls[i].value) + ',')
         ofile.write('\n')
     return ofname
 
-#Test
+# Test
 # ifname = input('Please input the file name to convert: ')
 # a = conv(ifname)
 # print(a)

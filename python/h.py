@@ -1,32 +1,34 @@
-from turtle import *
-color('red', 'yellow')
-begin_fill()
+import turtle
+
+turtle.color('red', 'yellow')
+turtle.begin_fill()
+
 while True:
-    forward(200)
-    left(170)
-    if abs(pos()) < 1:
+    turtle.forward(200)
+    turtle.left(170)
+    if abs(turtle.pos()) < 1:
         break
 
 while True:
-    back(200)
-    left(170)
-    if abs(pos()) < 1:
+    turtle.back(200)
+    turtle.left(170)
+    if abs(turtle.pos()) < 1:
         break
 
-left(90)
-forward(100)
+turtle.left(90)
+turtle.forward(100)
 while True:
-    forward(200)
-    left(170)
-    if abs(pos()) < 100:
+    turtle.forward(200)
+    turtle.left(170)
+    if abs(turtle.pos()) < 100:
         break
 
-backward(200)
+turtle.backward(200)
 while True:
-    back(200)
-    left(170)
-    if abs(pos()) < 100:
+    turtle.back(200)
+    turtle.left(170)
+    if abs(turtle.pos()) < 100:
         break
 
-end_fill()
-done()
+turtle.end_fill()
+turtle.done()

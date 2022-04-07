@@ -1,4 +1,6 @@
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
+import urllib.parse
+import urllib.error
 import json
 import ssl
 
@@ -10,7 +12,7 @@ api_key = False
 if api_key is False:
     api_key = 42
     serviceurl = 'http://py4e-data.dr-chuck.net/json?'
-else :
+else:
     serviceurl = 'https://maps.googleapis.com/maps/api/geocode/json?'
 
 # Ignore SSL certificate errors
@@ -25,7 +27,8 @@ while True:
 
     parms = dict()
     parms['address'] = address
-    if api_key is not False: parms['key'] = api_key
+    if api_key is not False:
+        parms['key'] = api_key
     url = serviceurl + urllib.parse.urlencode(parms)
 
     print('Retrieving', url)
@@ -33,7 +36,7 @@ while True:
     data = uh.read().decode()
     try:
         js = json.loads(data)
-    except:
+    except Exception:
         js = None
 
     if not js or 'status' not in js or js['status'] != 'OK':
