@@ -25,8 +25,21 @@ def queen(pos, occupied, solutions, possible):
 
 solutions = []
 n = int(input("To find the number of solutions possible for the n-queen problem please enter your n: "))
-possible = set([i for i in range(n)])
-for i in range(n):
-    occupied = [i]
-    queen(i, occupied, solutions, possible)
-print(len(solutions))
+if n == 1:
+    print([['Q']])
+else:
+    possible = set([i for i in range(n)])
+
+    for i in range(n):
+        occupied = [i]
+        queen(i, occupied, solutions, possible)
+
+    ans = []
+    for solution in solutions:
+        lst = []
+        for pos in solution:
+            astr = '.'*pos + 'Q' + '.'*(n-pos-1)
+            lst.append(astr)
+        ans.append(lst)
+
+    print(ans)

@@ -1,16 +1,3 @@
-"""
-Python Image Representation (modified from MIT 6.865)
-
-YouTube Kylie Ying: https://www.youtube.com/ycubed
-Twitch KylieYing: https://www.twitch.tv/kylieying
-Twitter @kylieyying: https://twitter.com/kylieyying
-Instagram @kylieyying: https://www.instagram.com/kylieyying/
-Website: https://www.kylieying.com
-Github: https://www.github.com/kying18
-Programmer Beast Mode Spotify playlist: https://open.spotify.com/playlist/4Akns
-5EUb3gzmlXIdsJkPs?si=qGc4ubKRRYmPHAJAIrCxVQ
-"""
-
 import numpy as np
 import png
 
@@ -45,7 +32,8 @@ class Image:
 
     def write_image(self, output_file_name, gamma=2.2):
         '''
-        3D numpy array (Y, X, channel) of values between 0 and 1 -> write to png
+        3D numpy array (Y, X, channel) of values
+        between 0 and 1 -> write to png
         '''
         im = np.clip(self.array, 0, 1)
         y, x = self.array.shape[0], self.array.shape[1]
