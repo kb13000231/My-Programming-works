@@ -1,0 +1,5 @@
+Anime recommendation
+movie recommendation
+tv show recommendation
+
+spending tracker

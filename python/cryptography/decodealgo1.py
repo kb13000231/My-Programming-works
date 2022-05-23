@@ -2,14 +2,15 @@ def alpha_check(inp_alp):
     dd = dict()
     for i in range(len(inp_alp)):
         if inp_alp[i] not in dd.keys():
-            dd[inp_alp[i]] = dd.get(inp_alp[i],0) + 1
+            dd[inp_alp[i]] = dd.get(inp_alp[i], 0) + 1
         else:
             dd[inp_alp[i]] += 1
 
-    for k,v in dd.items():
-        if v >1:
+    for k, v in dd.items():
+        if v > 1:
             return 0
     return 1
+
 
 def str_check(inp_str):
     for i in inp_str:
@@ -19,6 +20,7 @@ def str_check(inp_str):
             return 0
     return 1
 
+
 def decode_algo(inp_str):
     ls = list()
     for i in inp_str:
@@ -26,7 +28,7 @@ def decode_algo(inp_str):
             ls.append(' ')
         else:
             ind = inp_alp.find(i)
-            if (ind-1)%2 == 0:
+            if (ind-1) % 2 == 0:
                 a = (ind-1)/2
                 ls.append(inp_alp[int(a)])
             else:
@@ -59,14 +61,14 @@ while True:
         break
     elif inp_str == 'file':
         fname = input('\nType the name of the encoded file: ')
-        ofile = open(fname,'r')
+        ofile = open(fname, 'r')
         out_file = ofile.read()
         check = input('\nWhat type of output do you want a "file" or plain "text": ')
         if check == 'text':
             print(decode_algo(out_file))
         else:
             fname_2 = input('\nEnter the output file name: ')
-            wfile = open(fname_2,'w')
+            wfile = open(fname_2, 'w')
             wfile.write(decode_algo(out_file))
     else:
         if str_check(inp_str) == 0:

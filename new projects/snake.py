@@ -2,8 +2,11 @@ import turtle
 import time
 import random
 
-with open('highscore.txt', 'r') as file:
-    high_score = int(file.read().split()[2])
+try:
+    with open('highscore.txt', 'r') as file:
+        high_score = int(file.read().split()[2])
+except FileNotFoundError:
+    high_score = 0
 
 delay = 0.1
 score = 0

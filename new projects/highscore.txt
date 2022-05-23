@@ -1,1 +1,1 @@
-highscore = 0
+high_score = 405
