@@ -23,7 +23,7 @@ items += ["Eternals", "Hawkeye", "Spider-man No Way Home", "Moon Knight", "Docto
 items += ["Thor: Love and Thunder", "I am Groot", "She-Hulk",  "WereWolf by Night", "Black Panther:Wakanda Forever"]
 
 print(len(items))
-items2 = items[:23] + items[26] + items[28:30] + items[31] + items[33] + items[35] + items[39]
+items2 = items[:23] + [items[26]] + items[28:30] + [items[31]] + [items[33]] + [items[35]] + [items[39]]
 
 sel = input("Only movies or movies + shows? Enter 1 or 2: ")
 
